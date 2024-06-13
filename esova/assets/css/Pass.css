@@ -1,0 +1,66 @@
+header img{
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+section{
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+}
+
+section span{
+    text-align: center;
+    font-size: 19px;
+    font-weight: 500;
+    padding-top: 70px;
+    padding-bottom: 20px;
+}
+
+.box-form{
+    border: 1px solid #0000003a;
+}
+
+.box-form img{
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+.box-form span{
+    font-size: 17px;
+    font-weight: normal;
+}
+
+.box-form .clave-input{
+    outline: none;
+    width: 185px;
+    height: 50px;
+    border: none;
+    border-bottom: 1px solid #F8DC23;
+    letter-spacing: 2em;
+    padding: 0 25px;
+}
+
+.box-btn{
+    padding-top: 20px;
+}
+
+.box-btn button{
+    width: 281px;
+    height: 50px;
+    font-size: 1em;
+}
+
+.img-fondo{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-fondo img{
+    width: 400px;
+    max-width: 100%;
+}

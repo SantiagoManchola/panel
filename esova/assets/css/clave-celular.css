@@ -1,0 +1,57 @@
+header img{
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+
+.box-form{
+    z-index: 1;
+}
+
+.box-form .clave-input{
+    outline: none;
+    width: 209px;
+    height: 50px;
+    border: none;
+    font-weight: bold;
+    font-size: 1em;
+    border-bottom: 1px solid #F8DC23;
+    letter-spacing: 1.5em;
+    /* padding: 0 25px; */
+}
+
+section{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+section span{
+    font-weight: 500;
+}
+
+.box-btn{
+    padding-top: 30px;
+}
+
+.box-btn button{
+    font-size: 1em;
+}
+
+.img-line{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.img-line img{
+    width: 600px;
+    max-width: 100%;
+    position: absolute;
+    top: -130px;
+    padding-bottom: 100px;
+}

